@@ -30,22 +30,26 @@ A responsive weather dashboard built with SvelteKit 5, TypeScript, and Tailwind 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <your-repo-url>
 cd weather-app
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env` file in the root directory:
+
 ```bash
 cp .env.example .env
 ```
 
 4. Add your OpenWeatherMap API key to `.env`:
+
 ```
 OPENWEATHER_API_KEY=your_actual_api_key_here
 ```
@@ -53,6 +57,7 @@ OPENWEATHER_API_KEY=your_actual_api_key_here
 ### Development
 
 Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -62,11 +67,13 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ### Build
 
 Build for production:
+
 ```bash
 npm run build
 ```
 
 Preview the production build:
+
 ```bash
 npm run preview
 ```
@@ -76,16 +83,19 @@ npm run preview
 ### Method 1: Using Vercel CLI
 
 1. Install Vercel CLI:
+
 ```bash
 npm i -g vercel
 ```
 
 2. Deploy:
+
 ```bash
 vercel
 ```
 
 3. Add your environment variable:
+
 ```bash
 vercel env add OPENWEATHER_API_KEY
 ```
@@ -131,9 +141,11 @@ weather-app/
 ### `GET /api/weather?city={cityName}`
 
 **Query Parameters:**
+
 - `city` (required): Name of the city
 
 **Success Response (200):**
+
 ```json
 {
   "city": "London",
@@ -144,6 +156,7 @@ weather-app/
 ```
 
 **Error Response (400/404/500):**
+
 ```json
 {
   "error": "Error message"
