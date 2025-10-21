@@ -1,6 +1,6 @@
-<div class="flex justify-center items-center py-12">
+<div class="flex justify-center items-center py-8">
 	<div
-		class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"
+		class="animate-spin rounded-full h-10 w-10 border-4 border-gray-200 border-t-blue-500"
 		role="status"
 		aria-label="Loading"
 	>

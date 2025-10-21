@@ -38,50 +38,47 @@
 	<meta name="description" content="Search and view current weather conditions for any city" />
 </svelte:head>
 
-<main class="min-h-screen bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 p-4">
-	<div class="container mx-auto max-w-4xl py-12">
-		<div class="text-center mb-12">
-			<h1 class="text-5xl font-bold text-white mb-4 drop-shadow-lg">Weather Dashboard</h1>
-			<p class="text-xl text-blue-50">Search for current weather conditions in any city</p>
-		</div>
+<main class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+	<div class="bg-white rounded-2xl shadow-xl p-8 sm:p-12 w-full max-w-lg">
+		<h1 class="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-8">
+			Weather Dashboard
+		</h1>
 
-		<div class="flex flex-col items-center gap-8">
-			<SearchBar onSearch={handleSearch} disabled={loading} />
+		<SearchBar onSearch={handleSearch} disabled={loading} />
 
-			{#if loading}
-				<LoadingSpinner />
-			{/if}
+		{#if loading}
+			<LoadingSpinner />
+		{/if}
 
-			{#if error}
-				<div
-					class="bg-red-100 border border-red-400 text-red-700 px-6 py-4 rounded-lg max-w-md w-full animate-fade-in"
-					role="alert"
-				>
-					<div class="flex items-start">
-						<svg
-							class="w-6 h-6 mr-3 flex-shrink-0"
-							fill="currentColor"
-							viewBox="0 0 20 20"
-							aria-hidden="true"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-						<div>
-							<strong class="font-bold">Error: </strong>
-							<span class="block sm:inline">{error}</span>
-						</div>
+		{#if error}
+			<div
+				class="mt-6 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg animate-fade-in"
+				role="alert"
+			>
+				<div class="flex items-start">
+					<svg
+						class="w-5 h-5 mr-2 flex-shrink-0 mt-0.5"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						aria-hidden="true"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+					<div class="text-sm">
+						<strong class="font-semibold">Error: </strong>
+						<span>{error}</span>
 					</div>
 				</div>
-			{/if}
+			</div>
+		{/if}
 
-			{#if weatherData && !loading}
-				<WeatherDisplay weather={weatherData} />
-			{/if}
-		</div>
+		{#if weatherData && !loading}
+			<WeatherDisplay weather={weatherData} />
+		{/if}
 	</div>
 </main>
 
