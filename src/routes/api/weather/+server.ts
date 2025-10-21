@@ -16,9 +16,9 @@ export const GET: RequestHandler = async ({ url }) => {
     });
   }
 
-  const OPENWEATHER_API_KEY = env.OPENWEATHER_API_KEY;
+  const VITE_OPENWEATHER_API_KEY = env.VITE_OPENWEATHER_API_KEY;
 
-  if (!OPENWEATHER_API_KEY) {
+  if (!VITE_OPENWEATHER_API_KEY) {
     return json(
       { error: "OpenWeather API key is not configured" } as WeatherError,
       { status: 500 }
@@ -29,7 +29,7 @@ export const GET: RequestHandler = async ({ url }) => {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
         city
-      )}&units=metric&appid=${OPENWEATHER_API_KEY}`
+      )}&units=metric&appid=${VITE_OPENWEATHER_API_KEY}`
     );
 
     if (!response.ok) {

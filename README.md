@@ -51,7 +51,7 @@ cp .env.example .env
 4. Add your OpenWeatherMap API key to `.env`:
 
 ```
-OPENWEATHER_API_KEY=your_actual_api_key_here
+VITE_OPENWEATHER_API_KEY=your_actual_api_key_here
 ```
 
 ### Development
@@ -97,7 +97,7 @@ vercel
 3. Add your environment variable:
 
 ```bash
-vercel env add OPENWEATHER_API_KEY
+vercel env add VITE_OPENWEATHER_API_KEY
 ```
 
 ### Method 2: Using Vercel Dashboard
@@ -105,7 +105,7 @@ vercel env add OPENWEATHER_API_KEY
 1. Push your code to GitHub
 2. Go to [vercel.com](https://vercel.com) and import your repository
 3. Add environment variable:
-   - Key: `OPENWEATHER_API_KEY`
+   - Key: `VITE_OPENWEATHER_API_KEY`
    - Value: Your OpenWeatherMap API key
 4. Deploy
 
